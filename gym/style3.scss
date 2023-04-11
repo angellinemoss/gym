@@ -1,0 +1,385 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-size: 2rem;
+}
+header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  position: sticky; //鎖定標題列
+  top: 0; //距離為零
+  z-index: 2;
+  background-color: #fff;
+  box-shadow: 3px 3px 3px #757474;
+
+  div.logo {
+    display: flex;
+    align-items: center;
+    flex: 5 1 400px;
+    // flex
+    margin-left: 2rem;
+    img {
+      width: 5vw;
+      height: 5vw;
+      margin-right: 1%;
+    }
+    h1 {
+      padding-top: 12.5px;
+    }
+  }
+  nav {
+    flex: 2 1 400px;
+
+    ul {
+      display: flex;
+      list-style: none;
+      justify-content: space-around;
+      padding-top: 18px;
+
+      li {
+        a {
+          font-family: "Megrim", cursive;
+          font-weight: 900;
+          color: #728fce;
+          text-decoration: none !important;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+main {
+  section.backImage {
+    min-height: 90vh;
+    width: 100%;
+    background-image: url(./2119x1415gym.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    h3 {
+      font-size: 3.5rem;
+      color: white;
+      margin: 2rem 0;
+    }
+    button.start {
+      background-color: rgb(127, 212, 252);
+      padding: 0.75rem 1.5rem;
+      color: white;
+      font-size: 1.5rem;
+      border: none;
+      border-radius: 1rem;
+      cursor: pointer;
+    }
+    div.filter {
+      background-color: rgba(0, 0, 0, 0.2);
+      width: 100%;
+      min-height: 90vh;
+      position: absolute;
+      top: 0;
+      z-index: -1;
+    }
+  }
+  section.second {
+    // min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    h2 {
+      font-size: 2rem;
+      margin: 2rem 0;
+    }
+    section.cards {
+      display: flex;
+      // border: 2px solid rosybrown;
+      width: 80%;
+      min-height: 80vh; //讓最小高度保持在80vh
+      flex-wrap: wrap;
+
+      div.card {
+        // border: 2px solid #e2e2aa;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        padding: 1rem;
+        flex: 1 1 300px;
+
+        div.image-container {
+          overflow: hidden;
+          width: 15vw;
+          height: 15vw;
+          border-radius: 50%;
+          //   border: 1px solid #27a6e0;
+          img {
+            width: 15vw;
+            height: 15vw;
+            // border-radius: 50%;
+            // margin: 1rem 0;
+            transition: all 0.2s;
+          }
+          img:hover {
+            transform: scale(1.2);
+          }
+        }
+
+        h4 {
+          font-size: 2rem;
+        }
+        p {
+          font-size: 1.25rem;
+        }
+        a {
+          margin: 1rem 0;
+          text-decoration: none;
+          padding: 1rem 1.5rem;
+          background-color: #000080;
+          color: #fff;
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 40vh;
+  justify-content: space-around;
+  background-color: rgb(207, 207, 207);
+  div.logo {
+    display: flex;
+    align-items: center;
+    img {
+      width: 6vw;
+      height: 6vw;
+      padding: 1%;
+    }
+  }
+  nav {
+    width: 30%;
+    ul {
+      display: flex;
+      list-style: none;
+      width: 100%;
+      //nav寬度是30%，如果再設30會擠在一起，因此ul裡面要改為100%
+      justify-content: space-around;
+      flex-wrap: wrap;
+      li {
+        flex-basis: 100px;
+        a {
+          color: black;
+          text-decoration: none !important;
+          font-size: 1.35rem;
+          color: #fff;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  section.links {
+    a {
+      margin: 0 1rem;
+      img {
+        width: 5vw;
+        height: 5vw;
+      }
+    }
+  }
+}
+@media screen and (max-width:1200px) {
+  main {
+    div.bg-img {
+      min-height: 50vh;
+      padding-top: 5%;
+    }
+    section.second {
+      section.cards {
+        div.card {
+          img {
+            width: 40vw;
+            height: 40vw;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width:550px) {
+  header {
+    div.logo {
+      margin-left: 0.5rem;
+      img {
+        width: 15vw;
+        height: 15vw;
+      }
+    }
+    nav{
+      ul{
+        li{
+          a{
+            font-size: 1.1rem;
+          }
+        }
+      }
+    }
+  }
+  main {
+    .bgcard {
+      h1 {
+        font-size: 2.5rem;
+      }
+      dl {
+        dt {
+          font-size: 1.5rem;
+        }
+        dd {
+          font-size: 1.7rem;
+        }
+      }
+    }
+  }
+  footer {
+    div.logo {
+      img {
+        width: 15vw;
+        height: 15vw;
+      }
+    }
+    section.links {
+      margin-top: 1rem;
+      a {
+        img {
+          width: 10vw;
+          height: 10vw;
+        }
+      }
+    }
+  }
+}
+//卷軸設定
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #4682b4;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #4169e1;
+}
+
+.bg-img {
+  /* The image used */
+  background-image: url("./3840x2160.jpg");
+
+  /* Control the height of the image */
+  min-height: 90vh;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  // padding-top: 15%;
+  // padding-bottom: 5%;
+}
+
+.col-12 {
+  margin-bottom: 5%;
+}
+/* Add styles to the form container */
+.container {
+  // position: relative;
+  // right: 0;
+  // margin: 0 auto;
+  max-width: 300px;
+  padding: 16px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: #79baec;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+// main div.card-body p {
+//   font-family: "Caveat", cursive;
+//   a {
+//     font-family: "Caveat", cursive;
+//   }
+// }
+.bgsty {
+  background-color: rgba($color: #3f3c3c, $alpha: 0.9);
+  color: rgb(8, 3, 3);
+  // text-shadow: 1px 2px 2px white;
+}
+.bgcard {
+  h1 {
+    font-size: 4rem;
+  }
+  dl {
+    dt {
+      font-size: 2.1rem;
+    }
+    dd {
+      font-size: 1.7rem;
+    }
+  }
+}
